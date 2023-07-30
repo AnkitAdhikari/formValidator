@@ -10,46 +10,64 @@
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <script defer src="./src/js/script.js"></script>
   </head>
   <body>
     <form class="form">
       <h1>VALIDATE</h1>
       <div class="input-area">
-        <div class="input-field">
+        <div class="input-field username-input-field">
           <label for="username">username</label>
           <div class="text-field">
             <input
               placeholder="ankit31512"
               type="text"
               name="username"
+              required
               id="username"
             />
             <span class="icon"><i class="bx bx-user"></i></span>
           </div>
+          <div class="error-container username-errors"></div>
         </div>
-        <div class="input-field">
+        <div class="input-field email-input-field">
           <label for="email">Email</label>
           <div class="text-field">
             <input
               placeholder="myname@gamil.com"
               type="email"
+              required
               name="user-email"
               id="email"
             />
             <span class="icon"><i class="bx bx-envelope"></i></span>
           </div>
+          <div class="error-container username-errors"></div>
         </div>
-        <div class="input-field">
+        <div class="input-field password-input-field">
           <label for="password">password</label>
           <div class="text-field">
             <input
               placeholder="something strong"
               type="password"
+              required
               name="password"
               id="password"
             />
             <span class="icon"><i class="bx bx-key"></i></span>
           </div>
+          <div class="error-container username-errors"></div>
+          <!-- <div class="error need-lower-case">* atlest 8 character long</div>
+          <div class="error need-lower-case">
+            * atlest 1 character uppercase
+          </div>
+          <div class="error need-lower-case">
+            * atlest 1 character lowercase
+          </div>
+          <div class="error need-lower-case">* atlest 1 special character</div>
+          <div class="error need-lower-case">
+            * password must be alpha numeric
+          </div> -->
         </div>
         <input type="submit" value="submit" />
       </div>
