@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validator</title>
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <!-- icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <form class="form">
+      <h1>VALIDATE</h1>
+      <div class="input-area">
+        <div class="input-field">
+          <label for="username">username</label>
+          <div class="text-field">
+            <input
+              placeholder="ankit31512"
+              type="text"
+              name="username"
+              id="username"
+            />
+            <span class="icon"><i class="bx bx-user"></i></span>
+          </div>
+        </div>
+        <div class="input-field">
+          <label for="email">Email</label>
+          <div class="text-field">
+            <input
+              placeholder="myname@gamil.com"
+              type="email"
+              name="user-email"
+              id="email"
+            />
+            <span class="icon"><i class="bx bx-envelope"></i></span>
+          </div>
+        </div>
+        <div class="input-field">
+          <label for="password">password</label>
+          <div class="text-field">
+            <input
+              placeholder="something strong"
+              type="password"
+              name="password"
+              id="password"
+            />
+            <span class="icon"><i class="bx bx-key"></i></span>
+          </div>
+        </div>
+        <input type="submit" value="submit" />
+      </div>
+    </form>
+  </body>
+</html>
