@@ -4,6 +4,7 @@ const email = document.querySelector("#email");
 const password = document.querySelector("#password");
 const usernameErrorContainer = document.querySelector(".username-errors");
 const passwordErrorContainer = document.querySelector(".password-errors");
+const emailErrorContainer = document.querySelector(".email-errors");
 const errorContainer = document.querySelectorAll(".error-container");
 const usernameErrors = {
   caseError: `<p class="error">* username must be lowercase</p>`,
@@ -24,6 +25,7 @@ form.addEventListener("submit", function (e) {
   errorContainer.forEach((el) => (el.innerHTML = ""));
   validateUsername(username.value);
   validatePassword(password.value);
+  validateEmail(email.value);
 });
 
 function isLowerCase(str) {
@@ -69,6 +71,20 @@ function validateUsername(str) {
   if (containsSpecialCharacters(str))
     errorThrower("username", usernameErrors.specialCharacterError);
 }
+
+const validateEmail = async function (email) {
+  const res = await (
+    await fetch(`https://api.mailcheck.ai/email/${email}`)
+  ).json();
+  console.log(res);
+  if (res.disposable || !res.mx) {
+    console.log("tempmal spotted");
+    emailErrorContainer.insertAdjacentHTML(
+      "afterbegin",
+      `<p class="error">* Invalid or temp mail not allowed</p>`
+    );
+  }
+};
 
 function validatePassword(str) {
   if (!hasLowerCase(str))
