@@ -20,11 +20,22 @@ const passwordErrors = {
   specialCharacterError: `<p class="error">* must have 1 special character</p>`,
 };
 
+document.querySelector('.bx-key').addEventListener('click', () => {
+  password.type = password.type === 'text' ? 'password' : 'text'
+})
+
+username.addEventListener('input', () => {
+  errorContainer.forEach((el) => (el.innerHTML = ""));
+  validateUsername(username.value);
+})
+password.addEventListener('input', () => {
+  errorContainer.forEach((el) => (el.innerHTML = ""));
+  validatePassword(password.value);
+})
+
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   errorContainer.forEach((el) => (el.innerHTML = ""));
-  validateUsername(username.value);
-  validatePassword(password.value);
   validateEmail(email.value);
 });
 
